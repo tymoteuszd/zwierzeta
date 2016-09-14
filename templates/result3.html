@@ -1,0 +1,145 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+<div class="page-header">
+    <h1>Wyniki dla ankietowanych nieposiadających zwierząt</h1>
+</div>
+</head>
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['bar','corechart']});
+      google.charts.setOnLoadCallback(drawChart8);
+      google.charts.setOnLoadCallback(drawChart7);
+      google.charts.setOnLoadCallback(drawChart6);
+      google.charts.setOnLoadCallback(drawChart5);
+      google.charts.setOnLoadCallback(drawChart4);
+      google.charts.setOnLoadCallback(drawChart3);
+      google.charts.setOnLoadCallback(drawChart2);
+      google.charts.setOnLoadCallback(drawChart1);
+
+
+        function drawChart1() {
+
+        var data1 = google.visualization.arrayToDataTable({{data1|tojson}});
+
+        var options1 = {
+          title: 'Płeć'
+        };
+
+        var chart1 = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart1.draw(data1, options1);
+      }
+
+   function drawChart2() {
+
+        var data2 = google.visualization.arrayToDataTable({{data2|tojson}});
+
+        var options2 = {
+          chart: {
+            title: 'Wiek'
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data2, options2);
+      }
+
+        function drawChart3() {
+
+        var data3 = google.visualization.arrayToDataTable({{data3|tojson}});
+
+        var options3 = {
+          title: 'Miejsce zamieszkania'
+        };
+
+        var chart3 = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart3.draw(data3, options3);
+      }
+
+ function drawChart4() {
+
+        var data4 = google.visualization.arrayToDataTable({{data4|tojson}});
+
+        var options4 = {
+          title: 'Nie posiadam zwierzęcia, ponieważ:'
+        };
+
+        var chart4 = new google.visualization.PieChart(document.getElementById('piechart1'));
+        chart4.draw(data4, options4);
+      }
+
+ function drawChart5() {
+
+        var data5 = google.visualization.arrayToDataTable({{data5|tojson}});
+
+        var options5 = {
+          title: 'Jeśli miałbyś dostać zwierzę, jakie najlepiej spełniłoby Twoje oczekiwania?'
+        };
+
+        var chart5 = new google.visualization.PieChart(document.getElementById('piechart2'));
+        chart5.draw(data5, options5);
+      }
+
+
+ function drawChart6() {
+
+        var data6 = google.visualization.arrayToDataTable({{data6|tojson}});
+
+        var options6 = {
+          title: 'Czy kiedykolwiek miałeś zwierzę'
+        };
+
+        var chart6 = new google.visualization.PieChart(document.getElementById('piechart3'));
+        chart6.draw(data6, options6);
+      }
+
+ function drawChart7() {
+
+        var data7 = google.visualization.arrayToDataTable({{data7|tojson}});
+
+        var options7 = {
+          title: 'Czy uważasz się za osobę mogącą ponieść odpowiedzialność za zwierzę?'
+        };
+
+        var chart7 = new google.visualization.PieChart(document.getElementById('piechart4'));
+        chart7.draw(data7, options7);
+      }
+
+ function drawChart8() {
+
+        var data8 = google.visualization.arrayToDataTable({{data8|tojson}});
+
+        var options8 = {
+          title: 'Czy ktoś w Twoim najbliższym gronie posiada zwierzęta?'
+        };
+
+        var chart8 = new google.visualization.PieChart(document.getElementById('piechart5'));
+        chart8.draw(data8, options8);
+      }
+
+
+    </script>
+
+  <body>
+
+    <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+    <div id="donutchart" style="width: 900px; height: 500px;"></div>
+    <div id="piechart1" style="width: 900px; height: 500px;"></div>
+    <div id="piechart2" style="width: 900px; height: 500px;"></div>
+    <div id="piechart3" style="width: 900px; height: 500px;"></div>
+    <div id="piechart4" style="width: 900px; height: 500px;"></div>
+    <div id="piechart5" style="width: 900px; height: 500px;"></div>
+
+  </body>
+
+
+
+{% endblock %}

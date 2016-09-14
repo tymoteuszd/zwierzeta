@@ -1,0 +1,82 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>Badanie posiadania zwierząt wśród studentów</h1>
+</div>
+
+<form role="form" action="/save2" method="post">
+    <div class="form-group">
+    <b>Płeć:</b>
+    <div class="form-group">
+          <input type="radio" name="plec" value="1" checked>Kobieta<br>
+          <input type="radio" name="plec" value="2">Mężczyzna<br>
+    </div>
+
+    <div class="form-group">
+    <b>Podaj swój wiek:</b>
+    <div class="form-group">
+          <input type="radio" name="wiek" value="1" checked>19-25<br>
+          <input type="radio" name="wiek" value="2">26-35<br>
+          <input type="radio" name="wiek" value="3">36-50<br>
+          <input type="radio" name="wiek" value="4">51-65<br>
+          <input type="radio" name="wiek" value="5">66 lub więcej<br>
+    </div>
+
+    <div class="form-group">
+    <b>Ilu mieszkańców liczy Twoja rodzinna miejscowość?</b>
+    <div class="form-group">
+          <input type="radio" name="miasto" value="1" checked>Wieś<br>
+          <input type="radio" name="miasto" value="2">Miasto do 20 tys. mieszkańców<br>
+          <input type="radio" name="miasto" value="3">Miasto od 20 tys. do 100 tys. mieszkańców<br>
+          <input type="radio" name="miasto" value="4">Miasto od 100 tys. do 500 tys. mieszkańców<br>
+          <input type="radio" name="miasto" value="5">Miasto powyżej 500 tys. mieszkańców<br>
+    </div>
+
+    <b>Nie posiadam zwierzęcia, ponieważ:</b>
+    <div class="form-group">
+          <input type="radio" name="q1" value="1" checked>Zdecydował o tym brak środków finansowych<br>
+          <input type="radio" name="q1" value="2">Nie mam odpowiednich warunków<br>
+          <input type="radio" name="q1" value="3">Nie lubię zwierząt<br>
+          <input type="radio" name="q1" value="4">Rozważam kupno zwierzęcia<br>
+          <input type="radio" name="q1" value="5">Mam alergię<br>
+    </div>
+
+    <b>Jeśli miałbyś dostać zwierzę, jakie najlepiej spełniłoby Twoje oczekiwania?</b>
+    <div class="form-group">
+          <input type="radio" name="q2" value="1" checked>Ssak<br>
+          <input type="radio" name="q2" value="2">Ptak<br>
+          <input type="radio" name="q2" value="3">Gad<br>
+          <input type="radio" name="q2" value="4">Ryba<br>
+          <input type="radio" name="q2" value="5">Płaz<br>
+    </div>
+
+    <b>Czy kiedykolwiek miałeś zwierzę?</b>
+    <div class="form-group">
+          <input type="radio" name="q3" value="1" checked>Tak<br>
+          <input type="radio" name="q3" value="2">Nigdy<br>
+    </div>
+
+    <b>Czy uważasz się za osobę mogącą ponieść odpowiedzialność za zwierzę?</b>
+    <div class="form-group">
+          <input type="radio" name="q4" value="1" checked>Zdecydowanie tak<br>
+          <input type="radio" name="q4" value="2">Raczej tak<br>
+          <input type="radio" name="q4" value="3">Raczej nie<br>
+          <input type="radio" name="q4" value="4">Zdecydowanie nie<br>
+          <input type="radio" name="q4" value="5">Nie wiem<br>
+    </div>
+
+    <b>Czy ktoś w Twoim najbliższym gronie posiada zwierzęta?</b>
+    <div class="form-group">
+          <input type="radio" name="q5" value="1" checked>Tak<br>
+          <input type="radio" name="q5" value="2">Nie<br>
+    </div>
+
+
+    <button type="submit" class="btn btn-default">Zapisz</button>
+</form>
+
+{% endblock %}
+

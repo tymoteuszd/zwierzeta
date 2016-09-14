@@ -1,0 +1,88 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+<div class="page-header">
+    <h1>Wyniki</h1>
+</div>
+</head>
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['bar','corechart']});
+      google.charts.setOnLoadCallback(drawChart4);
+      google.charts.setOnLoadCallback(drawChart3);
+      google.charts.setOnLoadCallback(drawChart2);
+      google.charts.setOnLoadCallback(drawChart1);
+
+
+   function drawChart2() {
+
+        var data2 = google.visualization.arrayToDataTable({{data2|tojson}});
+
+        var options2 = {
+          chart: {
+            title: 'Wiek'
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data2, options2);
+      }
+
+        function drawChart1() {
+
+        var data1 = google.visualization.arrayToDataTable({{data1|tojson}});
+
+        var options1 = {
+          title: 'Płeć'
+        };
+
+        var chart1 = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart1.draw(data1, options1);
+      }
+
+        function drawChart3() {
+
+        var data3 = google.visualization.arrayToDataTable({{data3|tojson}});
+
+        var options3 = {
+          title: 'Miejsce zamieszkania'
+        };
+
+        var chart3 = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart3.draw(data3, options3);
+      }
+
+ function drawChart4() {
+
+        var data4 = google.visualization.arrayToDataTable({{data4|tojson}});
+
+        var options4 = {
+          title: 'Ilość osób wypełniających ankietę'
+        };
+
+        var chart4 = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart4.draw(data4, options4);
+      }
+
+    </script>
+
+  <body>
+  <br>Dokładne dane dla:<br><li><a href="result2">ankietowanych posiadających zwierzęta</a></li><li><a href="result3">ankietowanych nieposiadających zwierząt</a></li><br>
+
+    <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+    <div id="donutchart" style="width: 900px; height: 500px;"></div>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+  </body>
+
+
+
+{% endblock %}
